@@ -1,0 +1,15 @@
+.footer-container {
+    background-color: var(--black);
+    color: var(--white);
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+
+.footer-container, .footer-info-container, .copyright-container {
+    display: flex;
+    align-items: center;
+}
+
+.space1 {
+    margin-right: 1rem;
+}

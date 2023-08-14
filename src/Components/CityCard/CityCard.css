@@ -1,0 +1,31 @@
+.cityCard-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+    height: 18.75rem;
+    color: var(--white);
+    margin: 0.5rem;
+    background: rgba(0,0,0,0.3);
+    border-radius: 1rem;
+}
+
+.cityCard-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 25rem;
+    height: 18.75rem;
+    border-radius: 1rem;
+}
+
+.cityCard-container p {
+    margin: 0;
+}
+.city-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
