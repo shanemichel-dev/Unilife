@@ -8,6 +8,7 @@
 .homepage-container h2 {
     font-size: 2rem;
     font-weight: 500;
+    margin-top: 6rem;
 }
 
 .city-card-container {
@@ -18,6 +19,8 @@
 }
 
 .allCitiesBtn {
+    text-decoration: none;
+    text-align: center;
     background-color: var(--iconBlue);
     color: var(--white);
     font-size: 1.25rem;

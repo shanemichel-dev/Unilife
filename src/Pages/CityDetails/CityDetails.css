@@ -1,0 +1,11 @@
+.city-details-container h2{
+    margin: 3rem 0 2rem 7rem;
+}
+
+.property-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}

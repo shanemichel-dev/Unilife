@@ -1,0 +1,40 @@
+.city-searchBar-container {
+    position: absolute;
+    bottom: 17.5rem;
+    right: 10.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 69.5rem;
+    height: 8rem;
+    z-index: 10;
+    background-color: var(--white);
+    border: none;
+    border-radius: 1.25rem;
+    box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.08);
+}
+
+#city-search {
+    width: 35.875rem;
+    height: 3rem;
+    border: 1px solid #CED3D8;
+    border-radius: 12px;
+    color: #CED3D8;
+    font-size: 1.25rem;
+    padding-left: 2rem;
+}
+
+#city-search option {
+    color: #CED3D8;
+}
+
+.city-searchBar-container button {
+    width: 21.8125rem;
+    height: 3rem;
+    background-color: var(--iconBlue);
+    border: none;
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 600;
+}

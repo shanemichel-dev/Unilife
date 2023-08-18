@@ -1,0 +1,35 @@
+.city-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0.5rem; 
+}
+
+.city-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.75rem;
+    font-weight: 600;
+    width: 18.875rem;
+    height: 5.5rem;
+    border: 1px solid var(--placeholderGray);
+    border-radius: 1.5rem;
+}
+
+.city-button:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--iconBlue);
+    font-size: 1.75rem;
+    font-weight: 600;
+    width: 18.875rem;
+    height: 5.5rem;
+    border: 1px solid var(--placeholderGray);
+    border-radius: 1.5rem;
+}

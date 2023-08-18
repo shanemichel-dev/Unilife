@@ -1,0 +1,230 @@
+.property-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.back-to-search {
+    text-decoration: none;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    margin: 3rem 0 1rem 3rem;
+}
+
+.property-details-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.property-images-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 38.75rem;
+    height: 34.75rem;
+}
+
+.top-property-image {
+    width: 100%;
+    height: 25rem;
+    border-radius: 1.5rem;
+    object-fit: cover;
+}
+
+.bottom-property-images-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bottom-property-images {
+    width: 12.25rem;
+    height: 8.75rem;
+    border-radius: 0.75rem;
+    object-fit: cover;
+}
+
+.property-location-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 38.75rem;
+    height: 34.75rem;
+}
+.property-address-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30.25rem;
+    border: 1px solid var(--placeholderGray);
+    border-radius: 1.5rem;
+}
+
+.property-address p {
+    font-size: 2.25rem;
+}
+
+.property-address-line {
+    width: 33.75rem;
+    height: 1px;
+    background-color: var(--placeholderGray);
+    flex-shrink: 0;
+}
+
+.property-address-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.property-address-details-icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+.property-address-details-icon-container p {
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.property-address-icon-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.property-address-details-icon {
+    color: var(--iconBlue);
+    margin-right: 1rem;
+    font-size: 2.5rem;
+
+}
+
+.property-icon-count {
+    color: var(--iconBlue);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.property-address-details-type {
+    color: var(--iconBlue);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.property-location-details-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.property-location-details-buttons-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18.625rem;
+    height: 3rem;
+    border: 1px solid var(--placeholderGray);
+    border-radius: 0.75rem;
+}
+
+.shortlist-button {
+    background-color: var(--white);
+}
+
+.shortlist-button-icon {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.book-viewing-button {
+    background-color: var(--iconBlue);
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.property-description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 38.75rem;
+    height: 21.6875rem;
+}
+
+.property-description-title {
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.property-description {
+    font-size: 1.25rem;
+}
+
+.property-prices-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 38.75rem;
+    height: 21.6875rem;
+}
+
+.property-prices-title {
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.bedroom-prices-container {
+    width: 100%;
+    
+    border: 1px solid var(--placeholderGray);
+    border-radius: 1.5rem;
+}
+
+.bedroom-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bedroom-prices-container p {
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+.bedroom-prices-container-border {
+    border-bottom: 1px solid var(--placeholderGray);
+}
+
+.key-features-container {
+    margin-left: 3rem;
+}
+
+.key-features-title {
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.key-features-icon {
+    color: var(--iconBlue);
+    font-size: 1.25rem;
+}
+
+.key-feature {
+    font-size: 1.25rem;
+}

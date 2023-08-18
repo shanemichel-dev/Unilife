@@ -1,0 +1,12 @@
+.see-all-cities-container h2{
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+.cities-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

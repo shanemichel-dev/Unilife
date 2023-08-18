@@ -30,3 +30,8 @@
     margin-right: 0.25rem;
     font-size: 1.25rem;
 }
+
+.logo-link {
+    text-decoration: none;
+    color: var(--white);
+}

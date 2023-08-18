@@ -25,6 +25,8 @@
     height: 3rem;
     border-radius: 0.5rem;
     border: none;
+    font-size: 1.25rem;
+    padding-left: 0.5rem;
 }
 
 .subscribe-container input::placeholder {

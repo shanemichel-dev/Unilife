@@ -9,11 +9,12 @@ import billIcon from '../../assets/bill-icon.png'
 import realEstate from '../../assets/real-estate.png'
 import favoriteHeart from '../../assets/favorite-heart.png'
 import person from '../../assets/person.png'
+import { Link } from 'react-router-dom';
+import CitySearchBar from './../../Components/CitySearchBar/CitySearchBar';
 
 function Homepage() {
 
   const [topCities, setTopCities] = useState([]);
-  const [allCities, setAllCities] = useState([]);
 
   useEffect(
     () => {
@@ -23,28 +24,21 @@ function Homepage() {
         
       })
       .catch(err=>console.log(err))
-
-      axios.get(`https://unilife-server.herokuapp.com/cities`)
-      .then(res=>{
-        setAllCities(res.data.response)
-        
-      })
-      .catch(err=>console.log(err))
     }, []
   );
 
-  const handleAllCitiesBtn = () => {
-    setTopCities(allCities);
-  };
-
   return (
     <div className='homepage-container'>
-      <Slider />
+      <Slider 
+        h1='Find student homes with bills included'
+        p="A simple and faster way to search for student accommodations"
+      />
+      <CitySearchBar />
       <h2>Student accommodations in our top cities</h2>
       <div className='city-card-container'>
         {topCities.map((city, index) => <CityCard key={index} city={city}/>)}
       </div>
-      <button className='allCitiesBtn' onClick={handleAllCitiesBtn}>See All Cites</button>
+      <Link className='allCitiesBtn' to={'/see-all-cities'}>See All Cites</Link>
       <div className='compare-banner'>
         <h3>Compare all inclusive student homes.</h3>
         <div className='compare-info-container'>
@@ -79,11 +73,11 @@ function Homepage() {
             <div>
               <h5>Your Favorite</h5>
               <p>Shortlist your Favorite properties and send enquiries in one click.</p>
-              <button className='searchCompareBtn'>Search & Compare</button>
+              <button className='searchCompareBtn' onClick={() => window.scrollTo(0, 0)}>Search & Compare</button>
             </div>
           </div>
         </div>
-        <img src={person} alt="" />
+        <img src={person} alt="person" />
       </div>
     </div>
   )
