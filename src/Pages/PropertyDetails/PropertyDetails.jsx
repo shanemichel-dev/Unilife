@@ -2,9 +2,27 @@ import { Link, useParams } from 'react-router-dom'
 import './PropertyDetails.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { MdOutlineBathtub, MdOutlineBed, MdOutlineKeyboardArrowLeft } from 'react-icons/md';
-import { AiOutlineCheck, AiOutlineHeart } from 'react-icons/ai';
+import { MdOutlineAddHomeWork, MdOutlineBathtub, MdOutlineBed, MdOutlineKeyboardArrowLeft } from 'react-icons/md';
+import { AiOutlineHeart } from 'react-icons/ai';
 import BedroomPrices from '../../Components/BedroomPrices/BedroomPrices';
+import KeyFeatures from '../../Components/KeyFeatures/KeyFeatures';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: '58.5rem',
+    height: '39.625rem',
+    borderRadius: '1.5rem',
+  },
+};
+
+Modal.setAppElement(document.getElementById('root'));
 
 function PropertyDetails() {
 
@@ -15,11 +33,10 @@ function PropertyDetails() {
     () => {
       axios(`https://unilife-server.herokuapp.com/properties/${propertyId}`)
       .then(res => {
-        console.log(res.data);
         setProperty(res.data);
       })
       .catch(err=>console.log(err))
-    }, []
+    }, [propertyId]
   );
 
   function formatBedroomString(str) {
@@ -36,6 +53,23 @@ function PropertyDetails() {
     return `${splitStr[0].charAt(0).toUpperCase() + splitStr[0].slice(1)} ${numberMap[splitStr[1]]}`;
   }
 
+  const totalItems = property?.bedroom_prices ? Object.entries(property.bedroom_prices).length : 0;
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#000';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <div className='property-details-container'>
@@ -98,7 +132,7 @@ function PropertyDetails() {
           </div>
           <div className='property-location-details-buttons-container'>
             <button className='shortlist-button'><AiOutlineHeart className='shortlist-button-icon'/>Shortlist</button>
-            <button className='book-viewing-button'>Book Viewing</button>
+            <button className='book-viewing-button' onClick={openModal}>Book Viewing</button>
           </div>
         </div>
       </div>
@@ -111,19 +145,48 @@ function PropertyDetails() {
           <p className='property-prices-title'>Bedroom Prices</p>
           <div className='bedroom-prices-container'>
           {property?.bedroom_prices && Object.entries(property?.bedroom_prices).map(([bedroomNum, price], index) => 
-            <BedroomPrices key={index} bedroomNum={formatBedroomString(bedroomNum)} price={price} />
+            <BedroomPrices key={index} bedroomNum={formatBedroomString(bedroomNum)} price={price} index={index} totalItems={totalItems}/>
           )}
           </div>
         </div>
       </div>
       <div className='key-features-container'>
         <p className='key-features-title'>Key Features</p>
-        <p className='key-feature'><AiOutlineCheck className='key-features-icon'/>&nbsp;{property?.key_features && property?.key_features[0]}</p>
-        <p className='key-feature'><AiOutlineCheck className='key-features-icon'/>&nbsp;{property?.key_features && property?.key_features[1]}</p>
-        <p className='key-feature'><AiOutlineCheck className='key-features-icon'/>&nbsp;{property?.key_features && property?.key_features[2]}</p>
-        <p className='key-feature'><AiOutlineCheck className='key-features-icon'/>&nbsp;{property?.key_features && property?.key_features[3]}</p>
-        <p className='key-feature'><AiOutlineCheck className='key-features-icon'/>&nbsp;{property?.key_features && property?.key_features[4]}</p>
+        {property?.key_features && property?.key_features.map((feature, index) => <KeyFeatures key={index} feature={feature}/>)}
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Book Viewing"
+      >
+        <div className='book-viewing-modal-header-container'>
+          <div className='book-viewing-modal-header-title-container'>
+            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Book A Viewing</h2>
+            <p>{property?.address && property?.address.street}<br />
+              {property?.address && property?.address.city},&nbsp;
+              {property?.address && property?.address.postcode}
+            </p>
+          </div>
+          <MdOutlineAddHomeWork className='book-viewing-modal-icon'/>
+        </div>
+        <form className='book-viewing-modal-form'>
+          <div className='book-viewing-modal-form-left'>
+            <label htmlFor="" className='book-viewing-modal-form-label'>Name</label>
+            <input type="text" name="" id="" placeholder='Enter your name' className='book-viewing-modal-form-input'/>
+            <label htmlFor="" className='book-viewing-modal-form-label'>Email</label>
+            <input type="email" name="" id="" placeholder='Enter your email address' className='book-viewing-modal-form-input'/>
+            <label htmlFor="" className='book-viewing-modal-form-label'>Phone Number</label>
+            <input type="number" name="" id="" placeholder='Enter your phone number' className='book-viewing-modal-form-input'/>
+          </div>
+          <div className='book-viewing-modal-form-right'>
+            <label htmlFor="" className='book-viewing-modal-form-label'>Message</label>
+            <textarea name="" id="" cols="30" rows="10" placeholder='Enter your message' className='book-viewing-modal-form-textArea'></textarea>
+            <button>Submit</button>
+          </div>
+        </form>
+      </Modal>
     </div>
   )
 }

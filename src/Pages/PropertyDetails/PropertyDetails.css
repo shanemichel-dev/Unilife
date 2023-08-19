@@ -189,28 +189,6 @@
     font-weight: 500;
 }
 
-.bedroom-prices-container {
-    width: 100%;
-    
-    border: 1px solid var(--placeholderGray);
-    border-radius: 1.5rem;
-}
-
-.bedroom-price-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bedroom-prices-container p {
-    font-size: 1.25rem;
-    margin: 1rem;
-}
-
-.bedroom-prices-container-border {
-    border-bottom: 1px solid var(--placeholderGray);
-}
-
 .key-features-container {
     margin-left: 3rem;
 }
@@ -220,11 +198,64 @@
     font-weight: 500;
 }
 
-.key-features-icon {
-    color: var(--iconBlue);
+.book-viewing-modal-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.book-viewing-modal-header-title-container {
+    width: 50%;
+}
+
+.book-viewing-modal-header-title-container p {
     font-size: 1.25rem;
 }
 
-.key-feature {
-    font-size: 1.25rem;
+.book-viewing-modal-icon {
+    font-size: 4rem;
+    color: var(--iconBlue);
+}
+
+.book-viewing-modal-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.book-viewing-modal-form-label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.book-viewing-modal-form-input {
+    width: 25rem;
+    height: 3.5rem;
+    border: 1px solid var(--placeholderGray);
+    border-radius: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-viewing-modal-form-textArea {
+    width: 25rem;
+    height: 11.5rem;
+    border: 1px solid var(--placeholderGray);
+    border-radius: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-viewing-modal-form-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.book-viewing-modal-form-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
 }

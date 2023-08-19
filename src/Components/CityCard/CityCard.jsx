@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './CityCard.css'
 
 function CityCard(city) {
@@ -7,7 +8,7 @@ function CityCard(city) {
   return (
     <div className='cityCard-container'>
       <img src={city?.city.image_url} alt="city" />
-      <p className='city-name'>{city?.city.name}</p>
+      <Link to={`/city-details/${city?.city._id}`} className='city-card-name-link'><p className='city-name'>{city?.city.name}</p></Link>
       <p>{city?.city.property_count} &nbsp; properties</p>
     </div>
   )

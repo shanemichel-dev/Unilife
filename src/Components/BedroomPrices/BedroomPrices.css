@@ -1,0 +1,20 @@
+.bedroom-prices-container {
+    width: 100%;
+    border: 1px solid var(--placeholderGray);
+    border-radius: 1.5rem;
+}
+
+.bedroom-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bedroom-prices-container p {
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+.bedroom-prices-container-border {
+    border-bottom: 1px solid var(--placeholderGray);
+}
