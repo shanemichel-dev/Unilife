@@ -17,7 +17,7 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     width: '58.5rem',
-    height: '39.625rem',
+    height: '30rem',
     borderRadius: '1.5rem',
   },
 };
@@ -55,6 +55,28 @@ function PropertyDetails() {
 
   const totalItems = property?.bedroom_prices ? Object.entries(property.bedroom_prices).length : 0;
 
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const handleImageClick = (index) => {
+    if (index > 0 && index < property.images.length) {
+      const newSelectedImage = property.images[index];
+      const newTopImage = property.images[0];
+  
+      const newImageOrder = [
+        newSelectedImage,
+        ...property.images.slice(1, index),
+        newTopImage,
+        ...property.images.slice(index + 1)
+      ];
+  
+      setSelectedImageIndex(0);
+      setProperty({
+        ...property,
+        images: newImageOrder
+      });
+    }
+  };  
+
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -76,11 +98,22 @@ function PropertyDetails() {
       <Link className='back-to-search' to={`/city-details/${property?.city_id && property?.city_id._id}`}><MdOutlineKeyboardArrowLeft />&nbsp;Back to Search</Link>
       <div className='property-details-section'>
         <div className='property-images-container'>
-          <img className='top-property-image' src={property?.images && property?.images[0]} alt="property image" />
+          <img
+            className='top-property-image'
+            src={property?.images && property?.images[selectedImageIndex]}
+            alt="property image"
+          />
           <div className='bottom-property-images-container'>
-            <img className='bottom-property-images' src={property?.images && property?.images[1]} alt="property image" />
-            <img className='bottom-property-images' src={property?.images && property?.images[2]} alt="property image" />
-            <img className='bottom-property-images' src={property?.images && property?.images[3]} alt="property image" />
+            {property?.images &&
+              property.images.slice(1).map((image, index) => (
+                <img
+                  key={index}
+                  className='bottom-property-images'
+                  src={image}
+                  alt="property image"
+                  onClick={() => handleImageClick(index + 1)}
+                />
+              ))}
           </div>
         </div>
         <div className='property-location-details-container'>
@@ -183,7 +216,7 @@ function PropertyDetails() {
           <div className='book-viewing-modal-form-right'>
             <label htmlFor="" className='book-viewing-modal-form-label'>Message</label>
             <textarea name="" id="" cols="30" rows="10" placeholder='Enter your message' className='book-viewing-modal-form-textArea'></textarea>
-            <button>Submit</button>
+            <button className='book-viewing-modal-submit-btn'>Submit</button>
           </div>
         </form>
       </Modal>

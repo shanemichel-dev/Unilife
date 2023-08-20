@@ -46,6 +46,11 @@
     height: 8.75rem;
     border-radius: 0.75rem;
     object-fit: cover;
+    cursor: pointer;
+}
+
+.selected {
+    border: 2px solid var(--iconBlue);
 }
 
 .property-location-details-container {
@@ -236,14 +241,24 @@
     border: 1px solid var(--placeholderGray);
     border-radius: 0.75rem;
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--placeholderGray);
+    padding-left: 1rem;
 }
 
 .book-viewing-modal-form-textArea {
-    width: 25rem;
+    width: 23rem;
     height: 11.5rem;
     border: 1px solid var(--placeholderGray);
     border-radius: 0.75rem;
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--placeholderGray);
+    padding: 1rem;
+}
+
+.book-viewing-modal-form input:focus, .book-viewing-modal-form textarea:focus {
+    color: var(--black);
 }
 
 .book-viewing-modal-form-left {
@@ -258,4 +273,15 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+}
+
+.book-viewing-modal-submit-btn {
+    width: 25rem;
+    height: 3.5rem;
+    color: var(--white);
+    background-color: var(--iconBlue);
+    border-radius: 0.75rem;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
