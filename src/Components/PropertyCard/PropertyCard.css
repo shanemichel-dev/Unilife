@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25rem;
+    width: 30%;
     height: 31.25rem;
     border: 1px solid var(--placeholderGray);
     border-radius: 1.5rem;
@@ -108,4 +108,16 @@
     margin-left: 1rem;
     text-decoration: none;
     color: var(--black);
+}
+
+@media only screen and (max-width: 770px) {
+    .property-card-container {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .property-card-container {
+        width: 90%;
+    }
 }

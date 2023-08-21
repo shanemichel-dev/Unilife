@@ -78,6 +78,7 @@ function Homepage() {
           </div>
         </div>
         <img src={person} alt="person" />
+        <button className='searchCompareBtn-smaller-device' onClick={() => window.scrollTo(0, 0)}>Search & Compare</button>
       </div>
     </div>
   )

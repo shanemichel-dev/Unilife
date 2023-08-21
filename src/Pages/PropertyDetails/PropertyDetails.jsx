@@ -1,12 +1,13 @@
 import { Link, useParams } from 'react-router-dom'
 import './PropertyDetails.css'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { MdOutlineAddHomeWork, MdOutlineBathtub, MdOutlineBed, MdOutlineKeyboardArrowLeft } from 'react-icons/md';
-import { AiOutlineHeart } from 'react-icons/ai';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import BedroomPrices from '../../Components/BedroomPrices/BedroomPrices';
 import KeyFeatures from '../../Components/KeyFeatures/KeyFeatures';
 import Modal from 'react-modal';
+import { ShortlistContext } from '../../Context/ShortlistContext';
 
 const customStyles = {
   content: {
@@ -16,8 +17,8 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '58.5rem',
-    height: '30rem',
+    width: '80%',
+    height: 'auto',
     borderRadius: '1.5rem',
   },
 };
@@ -26,8 +27,17 @@ Modal.setAppElement(document.getElementById('root'));
 
 function PropertyDetails() {
 
+  const {shortlist, addProperty, removeProperty} = useContext(ShortlistContext);
+  const [isShortlist, setIsShortlist] = useState(false);
+
   const {propertyId} = useParams('');
   const [property, setProperty] = useState([]);
+
+  useEffect(
+    ()=> {
+      setIsShortlist(shortlist.find(item => item._id == property._id))
+    }, [shortlist, property._id]
+  )
 
   useEffect(
     () => {
@@ -93,6 +103,15 @@ function PropertyDetails() {
     setIsOpen(false);
   }
 
+  const toggleShortlist = () => {
+    setIsShortlist(!isShortlist);
+    if (isShortlist) {
+      removeProperty(property?._id);
+    } else {
+      addProperty(property);
+    }
+  };
+
   return (
     <div className='property-details-container'>
       <Link className='back-to-search' to={`/city-details/${property?.city_id && property?.city_id._id}`}><MdOutlineKeyboardArrowLeft />&nbsp;Back to Search</Link>
@@ -119,7 +138,7 @@ function PropertyDetails() {
         <div className='property-location-details-container'>
           <div className='property-address-details-container'>
             <div className='property-address'>
-              <p>{property?.address && property?.address.street},&nbsp;{property?.address && property?.address.city},&nbsp;{property?.address && property?.address.postcode}</p>
+              <p>{property?.address && property?.address.street}<br />{property?.address && property?.address.city},&nbsp;{property?.address && property?.address.postcode}</p>
             </div>
             <div className='property-address-line'></div>
             <div className='property-address-details'>
@@ -164,7 +183,15 @@ function PropertyDetails() {
             </div>
           </div>
           <div className='property-location-details-buttons-container'>
-            <button className='shortlist-button'><AiOutlineHeart className='shortlist-button-icon'/>Shortlist</button>
+            <button className='shortlist-button' onClick={toggleShortlist}>
+              {
+                isShortlist?
+                <AiFillHeart className='shortlist-button-icon' />
+                :
+                <AiOutlineHeart className='shortlist-button-icon' />
+              }
+              Shortlist
+            </button>
             <button className='book-viewing-button' onClick={openModal}>Book Viewing</button>
           </div>
         </div>

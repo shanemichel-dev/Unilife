@@ -1,6 +1,6 @@
 import { AiOutlineHeart } from 'react-icons/ai'
 import './Header.css'
-import { MdOutlineAddHomeWork, MdOutlineHolidayVillage } from 'react-icons/md'
+import { MdOutlineHolidayVillage } from 'react-icons/md'
 import { BiEnvelope } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import Modal from 'react-modal';
@@ -15,8 +15,8 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '58.5rem',
-    height: '30rem',
+    width: '90%',
+    height: 'auto',
     borderRadius: '1.5rem',
   },
 };
@@ -24,6 +24,16 @@ const customStyles = {
 Modal.setAppElement(document.getElementById('root'));
 
 function Header() {
+
+  const [menuActive, setMenuActive] = useState(false);
+
+  function toggleMenu() {
+    setMenuActive(!menuActive);
+  }
+
+  function handleMenuItemClick() {
+    setMenuActive(false); // Close the menu when a menu item is clicked
+  }
 
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -48,13 +58,23 @@ function Header() {
         <Link className='logo-link' to={'/'}><p>UniLife</p></Link>
       </div>
       <div className='header-btns-container'>
-        <div className='shortlist-container'>
-          <AiOutlineHeart className='heart-icon'/>
-          <p>Shortlist</p>
-        </div>
-        <div className='contact-container'>
-          <BiEnvelope className='envelope-icon'/>
-          <p onClick={openModal}>Contact Us</p>
+        <button className='menu-toggle-btn' onClick={toggleMenu}>
+          <div className='bar'></div>
+          <div className='bar'></div>
+          <div className='bar'></div>
+          <div className='bar'></div>
+        </button>
+        <div className={`menu-items ${menuActive ? 'active' : ''}`}>
+          <Link to={'/shortlist'} className='shorlist-page-link' onClick={handleMenuItemClick}>
+            <div className='shortlist-container'>
+              <AiOutlineHeart className='heart-icon'/>
+              <p>Shortlist</p>
+            </div>
+          </Link>
+          <div className='contact-container' onClick={handleMenuItemClick}>
+            <BiEnvelope className='envelope-icon'/>
+            <p onClick={openModal}>Contact Us</p>
+          </div>
         </div>
       </div>
       <Modal

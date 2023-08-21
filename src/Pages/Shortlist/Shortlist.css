@@ -1,0 +1,10 @@
+.shortlist-h1-p {
+    margin-left: 6.5rem;
+}
+
+.shortlistPage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

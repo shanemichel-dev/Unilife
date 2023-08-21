@@ -1,11 +1,10 @@
 .city-searchBar-container {
     position: absolute;
-    bottom: 17.5rem;
-    right: 10.5rem;
+    top: 29rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 69.5rem;
+    width: 75%;
     height: 8rem;
     z-index: 0.5;
     background-color: var(--white);
@@ -15,7 +14,7 @@
 }
 
 #city-search {
-    width: 35.875rem;
+    width: 50%;
     height: 3rem;
     border: 1px solid #CED3D8;
     border-radius: 12px;
@@ -29,7 +28,7 @@
 }
 
 .city-searchBar-container button {
-    width: 21.8125rem;
+    width: 30%;
     height: 3rem;
     background-color: var(--iconBlue);
     border: none;
@@ -37,4 +36,35 @@
     color: var(--white);
     font-size: 1.25rem;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 770px) {
+    .city-searchBar-container {
+        top: 19rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .city-searchBar-container {
+        width: 20rem;
+        height: 6.5625rem;
+        flex-wrap: wrap;
+        top: 20rem;
+    }
+
+    #city-search {
+        width: 14.875rem;
+        height: 2.375rem;
+    }
+
+    .city-searchBar-container button {
+        width: 9.116875rem;
+        height: 2.375rem;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    .city-searchBar-container {
+        width: 90%;
+    }
 }

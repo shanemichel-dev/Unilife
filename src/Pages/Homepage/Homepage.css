@@ -1,8 +1,9 @@
 .homepage-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .homepage-container h2 {
@@ -29,7 +30,7 @@
     padding: 0.5rem;
     border: none;
     border-radius: 0.5rem;
-    margin: 2rem;
+    margin: 2rem 0;
 }
 
 .compare-banner {
@@ -38,8 +39,8 @@
     justify-content: center;
     align-items: center;
     background-color: var(--compareBannerBlue);
-    padding: 2rem;
-    margin: 1rem 0;
+    width: 90%;
+    border-radius: 1.5rem;
 }
 
 .compare-banner h3 {
@@ -51,6 +52,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .compare-icon-container {
@@ -88,8 +90,8 @@
 .search-compare-info-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     height: 35rem;
     padding: 0 6rem;
 }
@@ -119,5 +121,57 @@
     padding: 0.5rem;
     border: none;
     border-radius: 0.5rem;
-    margin-top: 2rem;
+}
+
+.searchCompareBtn-smaller-device {
+    display: none;
+}
+
+@media only screen and (max-width: 770px) {
+    .search-compare-info-container, .search-compare-info-section img {
+        display: none;
+    }
+
+    .searchCompareBtn-smaller-device {
+        display: block;
+        background-color: var(--iconBlue);
+        color: var(--white);
+        font-size: 1.25rem;
+        font-weight: 600;
+        width: 15rem;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        margin-bottom: 5rem;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .homepage-container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .compare-banner {
+        width: 90%;
+    }
+    .compare-banner h3, .compare-banner h4, .compare-banner p {
+        width: 90%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .compare-icon-container {
+        margin: 0;
+        width: 100%;
+    }
+
+    .search-compare-info-section {
+        margin: 0;
+    }
+
+    .search-compare-info-container {
+        padding: 0;
+    }
 }

@@ -1,10 +1,9 @@
 .social-banner-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--headerBlue);
     color: var(--white);
-    padding: 4rem 8rem;
 }
 
 .social-banner-container h3 {
@@ -14,6 +13,7 @@
 
 .subscribe-container {
     width: 25rem;
+    margin: 1rem;
 }
 
 .subscribe-container p {
@@ -40,6 +40,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    margin: 1rem;
 }
 
 .social-icon {
@@ -55,4 +56,31 @@
 
 .space {
     margin-right: 0.5rem;
-  }
+}
+
+@media only screen and (max-width: 770px) {
+    .social-banner-container h3 {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .social-banner-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .subscribe-container {
+        margin: 1rem 0;
+    }
+
+    .subscribe-container, .social-icons-container {
+        width: 80%;
+    }
+
+    .subscribe-container input {
+        width: 95%;
+        margin: 0;
+    }
+}

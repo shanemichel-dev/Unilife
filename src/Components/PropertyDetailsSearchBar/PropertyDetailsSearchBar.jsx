@@ -23,7 +23,7 @@ function PropertyDetailsSearchBar({ property, setCityProperties }) {
 
   return (
     <div className='property-details-search-bar-container'>
-      <div>
+      <div className='property-details-search-bar-section-container'>
         <p className='property-details-search-bar-title'>Min Bedroom</p>
         <select value={minBedroom} onChange={(e) => setMinBedroom(e.target.value)}>
             <option value=''>Any bedroom</option>
@@ -36,7 +36,7 @@ function PropertyDetailsSearchBar({ property, setCityProperties }) {
             ))}
         </select>
       </div>
-      <div>
+      <div className='property-details-search-bar-section-container'>
         <p className='property-details-search-bar-title'>Min Bathroom</p>
         <select value={minBathroom} onChange={(e) => setMinBathroom(e.target.value)}>
             <option value=''>Any Bathroom</option>
@@ -49,7 +49,7 @@ function PropertyDetailsSearchBar({ property, setCityProperties }) {
             ))}
         </select>
       </div>
-      <div>
+      <div className='property-details-search-bar-section-container'>
         <p className='property-details-search-bar-title'>Max Price</p>
         <select value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)}>
             <option value=''>Any price</option>
@@ -62,7 +62,7 @@ function PropertyDetailsSearchBar({ property, setCityProperties }) {
             ))}
         </select>
       </div>
-      <div>
+      <div className='property-details-search-bar-section-container'>
         <p className='property-details-search-bar-title'>Home Type</p>
         <select value={homeType} onChange={(e) => setHomeType(e.target.value)}>
             <option value=''>Any type</option>

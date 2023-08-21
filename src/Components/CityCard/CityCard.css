@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25rem;
+    width: 30%;
     height: 18.75rem;
     color: var(--white);
     margin: 0.5rem;
@@ -17,7 +17,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    width: 25rem;
+    width: 100%;
     height: 18.75rem;
     border-radius: 1rem;
 }
@@ -33,4 +33,23 @@
 .city-card-name-link {
     text-decoration: none;
     color: var(--white);
+}
+
+@media only screen and (max-width: 770px) {
+    .cityCard-container {
+        width: 40%;
+        height: 15rem;
+        margin: 0.5rem;
+    }
+    
+    .cityCard-container img {
+        height: 15rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .cityCard-container {
+        width: 80%;
+        margin: 0.5rem 0;
+    }
 }
