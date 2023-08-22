@@ -230,7 +230,7 @@
 
 .book-viewing-modal-form {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 }
@@ -253,15 +253,20 @@
 }
 
 .book-viewing-modal-form-textArea {
-    width: 100%;
+    width: 104%;
     height: 11.5rem;
+    resize: vertical;
     border: 1px solid var(--placeholderGray);
     border-radius: 0.75rem;
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
     color: var(--placeholderGray);
-    padding: 1rem 0 0 1rem;
 }
+
+.book-viewing-modal-form-textArea::placeholder {
+    padding-top: 1rem;
+    transform: translateX(5%);
+  }
 
 .book-viewing-modal-form input:focus, .book-viewing-modal-form textarea:focus {
     color: var(--black);
@@ -284,11 +289,10 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    margin-right: 1rem;
 }
 
 .book-viewing-modal-submit-btn {
-    width: 100%;
+    width: 105%;
     height: 3.5rem;
     color: var(--white);
     background-color: var(--iconBlue);
@@ -310,7 +314,13 @@
 }
 
 @media only screen and (max-width: 770px) {
+    .book-viewing-modal-form textarea {
+        width: 102.5%;
+    }
 
+    .book-viewing-modal-submit-btn {
+        width: 103.5%;
+    }
 
     .property-images-container {
         height: auto;
@@ -328,7 +338,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         width: 95%;
     }
 
@@ -336,14 +346,42 @@
         width: 100%;
     }
 
-    .book-viewing-modal-form label, .book-viewing-modal-form input, .book-viewing-modal-form textarea, .book-viewing-modal-form button {
+    .book-viewing-modal-form label, .book-viewing-modal-form input {
         width: 100%;
     }
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 450px) {
+    .book-viewing-modal-header-title-container {
+        width: 100%;
+    }
+
+    .book-viewing-modal-header-title-container h2 {
+        font-size: 1.25rem;
+    }
+
+    .book-viewing-modal-icon {
+        display: none;
+    }
+
     .property-address p, .property-description-title, .property-prices-title, .key-features-title {
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+
+    .book-viewing-modal-form label, .book-viewing-modal-form input, .book-viewing-modal-form textarea, .book-viewing-modal-header-title-container p {
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .book-viewing-modal-form textarea {
+        height: 3.5rem;
+        width: 104.5%;
+    }
+
+    .book-viewing-modal-submit-btn {
+        font-size: 1rem;
+        height: 2rem;
+        width: 106%;
     }
 
     .property-images-container, .property-location-details-container, .property-description-container, .property-prices-container {

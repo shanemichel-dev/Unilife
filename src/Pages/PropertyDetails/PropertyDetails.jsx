@@ -234,15 +234,15 @@ function PropertyDetails() {
         <form className='book-viewing-modal-form'>
           <div className='book-viewing-modal-form-left'>
             <label htmlFor="" className='book-viewing-modal-form-label'>Name</label>
-            <input type="text" name="" id="" placeholder='Enter your name' className='book-viewing-modal-form-input'/>
+            <input type="text" name="" id="" placeholder='Enter your name' className='book-viewing-modal-form-input' required/>
             <label htmlFor="" className='book-viewing-modal-form-label'>Email</label>
-            <input type="email" name="" id="" placeholder='Enter your email address' className='book-viewing-modal-form-input'/>
+            <input type="email" name="" id="" placeholder='Enter your email address' className='book-viewing-modal-form-input' required/>
             <label htmlFor="" className='book-viewing-modal-form-label'>Phone Number</label>
-            <input type="number" name="" id="" placeholder='Enter your phone number' className='book-viewing-modal-form-input'/>
+            <input type="number" name="" id="" placeholder='Enter your phone number' className='book-viewing-modal-form-input' required/>
           </div>
           <div className='book-viewing-modal-form-right'>
             <label htmlFor="" className='book-viewing-modal-form-label'>Message</label>
-            <textarea name="" id="" cols="30" rows="10" placeholder='Enter your message' className='book-viewing-modal-form-textArea'></textarea>
+            <textarea name="" id="" cols="30" rows="10" placeholder='Enter your message' className='book-viewing-modal-form-textArea' required></textarea>
             <button className='book-viewing-modal-submit-btn'>Submit</button>
           </div>
         </form>

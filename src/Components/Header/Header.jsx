@@ -15,9 +15,10 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '90%',
+    width: '80%',
     height: 'auto',
     borderRadius: '1.5rem',
+    zIndex: 9999,
   },
 };
 
@@ -93,16 +94,20 @@ function Header() {
         </div>
         <form className='book-viewing-modal-form'>
           <div className='book-viewing-modal-form-left'>
-            <label htmlFor="" className='book-viewing-modal-form-label'>Name</label>
-            <input type="text" name="" id="" placeholder='Enter your name' className='book-viewing-modal-form-input'/>
-            <label htmlFor="" className='book-viewing-modal-form-label'>Email</label>
-            <input type="email" name="" id="" placeholder='Enter your email address' className='book-viewing-modal-form-input'/>
-            <label htmlFor="" className='book-viewing-modal-form-label'>Phone Number</label>
-            <input type="number" name="" id="" placeholder='Enter your phone number' className='book-viewing-modal-form-input'/>
+            <label htmlFor="name" className='book-viewing-modal-form-label'>Name</label>
+            <input type="text" name="name" id="name" placeholder='Enter your name' className='book-viewing-modal-form-input'/>
+            <label htmlFor="select" className='select'>Are you a...</label>
+            <select name="select" id="select">
+              <option value="student">Student</option>
+            </select>
+            <label htmlFor="number" className='book-viewing-modal-form-label'>Phone Number</label>
+            <input type="number" name="number" id="phoneNumber" placeholder='Enter your phone number' className='book-viewing-modal-form-input'/>
           </div>
           <div className='book-viewing-modal-form-right'>
-            <label htmlFor="" className='book-viewing-modal-form-label'>Message</label>
-            <textarea name="" id="" cols="30" rows="10" placeholder='Enter your message' className='book-viewing-modal-form-textArea'></textarea>
+            <label htmlFor="email" className='book-viewing-modal-form-label'>Email</label>
+            <input type="email" name="email" id="email" placeholder='Enter your email address' className='book-viewing-modal-form-input'/>
+            <label htmlFor="message" className='book-viewing-modal-form-label'>Message</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder='Enter your message' className='book-viewing-modal-form-textArea'></textarea>
             <button className='book-viewing-modal-submit-btn'>Submit</button>
           </div>
         </form>
